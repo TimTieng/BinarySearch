@@ -16,6 +16,11 @@ namespace BinarySearch
             int[] testArr1 = {1,3,4,5,6};
             int target1 = 5;
             BinarySearchAlgorithm(testArr1, target1);
+
+            // Recursive Test - should return 1
+            int[] test2 = {2,5,6,7,9};
+            int target2 = 5;
+            RecursiveBinarySearch(test2, target2, 0,5);
         }   
         public static void BinarySearchAlgorithm(int[] array, int targetValue)
         {
@@ -46,6 +51,29 @@ namespace BinarySearch
                 }
             }
             Console.WriteLine("Target is not present in the array");
+        }
+        public static object RecursiveBinarySearch(int[] array, int targetValue, int low, int high)
+        {
+            if (low > high)
+            {
+                return "Nil";
+            }
+            else
+            {
+                int middle = (low + high) / 2;
+                if (targetValue == array[middle])
+                {
+                    return middle;
+                }
+                else if (targetValue < array[middle])
+                {
+                    return RecursiveBinarySearch(array, targetValue, low, middle-1);
+                }
+                else 
+                {
+                    return RecursiveBinarySearch(array, targetValue, middle +1, high);
+                }
+            }
         }
     }
 }
