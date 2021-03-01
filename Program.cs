@@ -27,7 +27,8 @@ namespace BinarySearch
             // Iterate through the provided array, Do so while certain condition remains true
             while (low <= high)
             {
-                // Compare and Evaluate the values to move indices
+                // Middle is the essential pointer
+                // If target is at middle pointer, return middle
                 if (targetValue == array[middle])
                 {
                     // return middleIndex
