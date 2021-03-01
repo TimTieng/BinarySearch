@@ -28,6 +28,9 @@ namespace BinarySearch
             int low = 0;
             int high = array.Length - 1; // Due to index 0, length will be -1 of overall length
             int middle = (low + high) / 2;
+            
+            // Sort Array if not done so
+            array.Sort();
 
             // Iterate through the provided array, Do so while certain condition remains true
             while (low <= high)
