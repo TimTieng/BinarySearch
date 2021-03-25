@@ -27,13 +27,15 @@ namespace BinarySearch
             // Declare and Init. low, high and middle index values
             int low = 0;
             int high = array.Length - 1; // Due to index 0, length will be -1 of overall length
-            int middle = (low + high) / 2;
+           
             
             // Sort Array if not done so
             Array.Sort(array);
             // Iterate through the provided array, Do so while certain condition remains true
             while (low <= high)
             {
+                // Declare this middle value in the while loop for reassignment
+                 int middle = (low + high) / 2;
                 // Middle is the essential pointer
                 // If target is at middle pointer, return middle
                 if (targetValue == array[middle])
